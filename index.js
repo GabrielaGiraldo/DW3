@@ -1,16 +1,16 @@
 const testimonios = document.querySelectorAll(".test")
 
-var current = 0
-function update(transitions) {
+var ac = 0
+function actualizar(transitions) {
     testimonios.forEach((element, index) => {
-        element.style.transform = "translate("+ ( (index - current) * 150) +"vw ,"+ (index * -400) +"px)"
+        element.style.transform = "translate("+ ( (index - ac) * 150) +"vw ,"+ (index * -400) +"px)"
         if (transitions == true) element.style.transition = "transform 1s"
     })
-    current += 1
-    if (current >= testimonios.length) current = 0
+    ac += 1
+    if (ac >= testimonios.length) ac = 0
 }
-update(false)
+actualizar(false)
 
 setInterval(() => {
-    update(true);
+    actualizar(true);
 }, 2000)
